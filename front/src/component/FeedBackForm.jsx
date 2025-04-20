@@ -1,25 +1,22 @@
 import React from "react";
 import { TextField, Button, Alert } from "@mui/material";
 
-/**
- * FeedbackForm uses the parent-managed `isSubbed` state to
- * persist submission status across mounts.
- */
 function FeedbackForm({ isSubbed, setIsSubbed }) {
-  console.log(isSubbed);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    const data = new URLSearchParams(new FormData(form)).toString();
+    const formData = new FormData(form);
+
+    // Convert form data to URLSearchParams
+    const searchParams = new URLSearchParams(formData);
+    searchParams.append("form-name", "feedback"); // Ensure form-name is included
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: data,
+      body: searchParams.toString(),
     })
       .then(() => {
-        // mark as submitted in parent state
         setIsSubbed(true);
         form.reset();
       })
@@ -31,10 +28,16 @@ function FeedbackForm({ isSubbed, setIsSubbed }) {
       name="feedback"
       method="POST"
       data-netlify="true"
+      netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
       style={{ marginTop: 32 }}
     >
       <input type="hidden" name="form-name" value="feedback" />
+
+      {/* Add honeypot field for spam protection */}
+      <div style={{ display: "none" }}>
+        <input name="bot-field" />
+      </div>
 
       <h4 style={{ color: "#c4cfde", marginBottom: 8 }}>Leave Feedback</h4>
       <TextField
@@ -43,12 +46,15 @@ function FeedbackForm({ isSubbed, setIsSubbed }) {
         multiline
         minRows={3}
         placeholder="Tell me what you think…"
+        required
         sx={{
           backgroundColor: "#2e2e2e",
           borderRadius: 1,
           input: { color: "#fff" },
           textarea: { color: "#fff" },
           marginBottom: 2,
+          "& .MuiOutlinedInput-notchedOutline": { borderColor: "#444" },
+          "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "#666" },
         }}
       />
 
