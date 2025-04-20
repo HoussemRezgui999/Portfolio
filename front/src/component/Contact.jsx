@@ -8,12 +8,15 @@ export default function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    const data = new URLSearchParams(new FormData(form)).toString();
+    const formData = new FormData(form);
+
+    // Use FormData directly with URLSearchParams
+    const searchParams = new URLSearchParams(formData).toString();
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: data,
+      body: searchParams,
     })
       .then(() => {
         setSubmitted(true);
@@ -49,11 +52,10 @@ export default function ContactForm() {
       <form
         name="contact"
         method="POST"
-        netlify
+        data-netlify="true"
         onSubmit={handleSubmit}
         style={{ marginTop: 32 }}
       >
-        {/* Hidden input required by Netlify */}
         <input type="hidden" name="form-name" value="contact" />
 
         <h4 style={{ color: "#c4cfde", marginBottom: 12 }}>E-Mail Me</h4>
