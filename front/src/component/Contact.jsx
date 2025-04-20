@@ -49,10 +49,9 @@ export default function ContactForm() {
       <form
         name="contact"
         method="POST"
-        data-netlify="true"
+        netlify
         onSubmit={handleSubmit}
         style={{ marginTop: 32 }}
-        netlify
       >
         {/* Hidden input required by Netlify */}
         <input type="hidden" name="form-name" value="contact" />
