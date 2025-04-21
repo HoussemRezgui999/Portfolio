@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { TextField, Button, Alert } from "@mui/material";
 import { Col } from "antd";
+import { useTranslation } from "react-i18next";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,6 +26,7 @@ export default function ContactForm() {
       })
       .catch((err) => console.error("Form submission error:", err));
   };
+  const isArabic = i18n.language === "ar";
 
   return (
     <Col style={{ gap: 5 }}>
@@ -32,11 +35,14 @@ export default function ContactForm() {
           color: "#ff014f",
           letterSpacing: "3px",
           fontFamily: "sans-serif",
-          fontSize: "clamp(12px, 2vw, 16px)",
+          fontSize: isArabic
+            ? "clamp(24px, 4vw, 32px)"
+            : "clamp(14px, 2.5vw, 18px)",
+
           textAlign: "center",
         }}
       >
-        HAVE QUESTIONS OR OPPORTUNITIES? I’D LOVE TO HEAR FROM YOU
+        {t("contact.sectionSubtitle")}
       </div>
       <div
         style={{
@@ -46,7 +52,7 @@ export default function ContactForm() {
           margin: "16px 0",
         }}
       >
-        CONTACT ME
+        {t("contact.sectionTitle")}
       </div>
 
       <form
@@ -58,11 +64,20 @@ export default function ContactForm() {
       >
         <input type="hidden" name="form-name" value="contact" />
 
-        <h4 style={{ color: "#c4cfde", marginBottom: 12 }}>E-Mail Me</h4>
+        <h4
+          style={{
+            color: "#c4cfde",
+            marginBottom: 12,
+            textAlign: isArabic ? "right" : "left",
+          }}
+        >
+          {" "}
+          {t("contact.emailSectionTitle")}
+        </h4>
 
         <TextField
           name="name"
-          label="Your Name"
+          label={t("contact.form.nameLabel")}
           fullWidth
           variant="outlined"
           required
@@ -78,7 +93,7 @@ export default function ContactForm() {
 
         <TextField
           name="email"
-          label="Your Email"
+          label={t("contact.form.emailLabel")}
           type="email"
           fullWidth
           variant="outlined"
@@ -96,7 +111,7 @@ export default function ContactForm() {
 
         <TextField
           name="message"
-          label="Message"
+          label={t("contact.form.messageLabel")}
           fullWidth
           multiline
           minRows={4}
@@ -110,30 +125,48 @@ export default function ContactForm() {
             mt: 2,
             "& .MuiOutlinedInput-notchedOutline": { borderColor: "#444" },
             "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "#666" },
+            "& .MuiInputBase-input": { color: "#fff" },
+            "& textarea": { color: "#fff" },
+            "& .MuiInputLabel-root": { color: "#878e99" },
           }}
         />
-
-        <Button
-          type="submit"
-          variant="contained"
-          disabled={submitted}
-          sx={{
-            mt: 2,
-            background: "linear-gradient(145deg, #1e2024, #23272b)",
-            color: "#ff014f",
-            fontWeight: 600,
-            "&:hover": { background: "#191c1e" },
+        <div
+          style={{
+            display: "flex",
+            flexDirection: isArabic ? "row-reverse" : "row",
           }}
         >
-          {submitted ? "Thanks, I'll be in touch!" : "Send Message"}
-        </Button>
-
+          <Button
+            type="submit"
+            variant="contained"
+            disabled={submitted}
+            sx={{
+              mt: 2,
+              background: "linear-gradient(145deg, #1e2024, #23272b)",
+              color: "#ff014f",
+              fontWeight: 600,
+              "&:hover": { background: "#191c1e" },
+              "&.Mui-disabled": {
+                color: submitted ? "#fff" : "#ff014f",
+              },
+            }}
+          >
+            {submitted
+              ? t("contact.form.thankYou")
+              : t("contact.form.sendButton")}
+          </Button>
+        </div>
         {submitted && (
           <Alert
             severity="success"
-            sx={{ backgroundColor: "#1e2024", color: "#c4cfde", mt: 2 }}
+            sx={{
+              backgroundColor: "#1e2024",
+              color: "#c4cfde",
+              mt: 2,
+              flexDirection: isArabic ? "row-reverse" : "row",
+            }}
           >
-            Your message has been sent!
+            {t("contact.form.sentAlert")}
           </Alert>
         )}
       </form>

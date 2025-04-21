@@ -20,8 +20,14 @@ import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import React, { useState, useEffect } from "react";
 import ArrowOutwardOutlinedIcon from "@mui/icons-material/ArrowOutwardOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import { useTranslation } from "react-i18next";
 
 export default function ResumePage() {
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === "ar";
+  const isFrench = i18n.language === "fr";
+  const isDeutsch = i18n.language === "de";
+
   return (
     <>
       {" "}
@@ -32,11 +38,14 @@ export default function ResumePage() {
             color: "#ff014f",
             letterSpacing: "3px",
             fontFamily: "sans-serif",
-            fontSize: "clamp(12px, 2vw, 16px)",
+            fontSize: isArabic
+              ? "clamp(24px, 4vw, 32px)"
+              : "clamp(12px, 2vw, 16px)",
             textAlign: "center",
+            minHeight: "40px",
           }}
         >
-          VIEW MY RESUME AND FEEL FREE TO REACH OUT
+          {t("resume.sectionSubtitle")}
         </div>
         <div
           style={{
@@ -44,16 +53,21 @@ export default function ResumePage() {
             fontSize: "clamp(2rem, 8vw, 3.75rem)",
             textAlign: "center",
             margin: "16px 0",
+            minHeight: "80px",
           }}
         >
-          My Resume
+          {t("resume.sectionTitle")}
         </div>
 
         <div
           style={{ width: "100%", display: "flex", justifyContent: "center" }}
         >
           <div
-            style={{ width: "100%", maxWidth: "800px", aspectRatio: "21/22" }}
+            style={{
+              width: "100%",
+              maxWidth: "800px",
+              aspectRatio: isFrench ? "16/14 " : isDeutsch ? "16/11" : "21/22",
+            }}
           >
             <iframe
               src={resumePDF}

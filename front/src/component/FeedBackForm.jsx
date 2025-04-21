@@ -1,5 +1,6 @@
 import React from "react";
 import { TextField, Button, Alert } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 function FeedbackForm({ isSubbed, setIsSubbed }) {
   const handleSubmit = (e) => {
@@ -22,7 +23,8 @@ function FeedbackForm({ isSubbed, setIsSubbed }) {
       })
       .catch((err) => console.error("Form submission error:", err));
   };
-
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === "ar";
   return (
     <form
       name="feedback"
@@ -39,13 +41,22 @@ function FeedbackForm({ isSubbed, setIsSubbed }) {
         <input name="bot-field" />
       </div>
 
-      <h4 style={{ color: "#c4cfde", marginBottom: 8 }}>Leave Feedback</h4>
+      <h4
+        style={{
+          color: "#c4cfde",
+          marginBottom: 8,
+          textAlign: isArabic ? "right" : "left",
+        }}
+      >
+        {" "}
+        {t("feedback.title")}
+      </h4>
       <TextField
         name="feedback"
         fullWidth
         multiline
         minRows={3}
-        placeholder="Tell me what you think…"
+        placeholder={t("feedback.placeholder")}
         required
         sx={{
           backgroundColor: "#2e2e2e",
@@ -57,29 +68,45 @@ function FeedbackForm({ isSubbed, setIsSubbed }) {
           "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "#666" },
         }}
       />
-
-      <Button
-        type="submit"
-        variant="contained"
-        disabled={isSubbed}
-        sx={{
-          background: "linear-gradient(145deg, #1e2024, #23272b)",
-          color: "#ff014f",
-          "&:hover": {
-            boxShadow: "6px 12px 12px rgba(0,0,0,0.5)",
-            background: "#191c1e",
-          },
+      <div
+        style={{
+          display: "flex",
+          flexDirection: isArabic ? "row-reverse" : "row",
         }}
       >
-        {isSubbed ? "Thanks for your feedback!" : "Submit Feedback"}
-      </Button>
+        <Button
+          type="submit"
+          variant="contained"
+          disabled={isSubbed}
+          sx={{
+            background: "linear-gradient(145deg, #1e2024, #23272b)",
+            color: "#ff014f",
+            "&:hover": {
+              boxShadow: "6px 12px 12px rgba(0,0,0,0.5)",
+              background: "#191c1e",
+            },
+            "&.Mui-disabled": {
+              color: isSubbed ? "#fff" : "#ff014f",
+              flexDirection: isArabic ? "row-reverse" : "row",
+            },
+            flexDirection: isArabic ? "row-reverse" : "row",
+          }}
+        >
+          {isSubbed ? t("feedback.thankYou") : t("feedback.submitButton")}
+        </Button>
+      </div>
 
       {isSubbed && (
         <Alert
           severity="success"
-          sx={{ backgroundColor: "#1e2024", color: "#c4cfde", mt: 2 }}
+          sx={{
+            backgroundColor: "#1e2024",
+            color: "#c4cfde",
+            mt: 2,
+            flexDirection: isArabic ? "row-reverse" : "row",
+          }}
         >
-          Feedback received!
+          {t("feedback.receivedAlert")}
         </Alert>
       )}
     </form>

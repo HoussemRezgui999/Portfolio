@@ -19,6 +19,7 @@ import img from "../assets/rbk.png";
 import ArrowOutwardOutlinedIcon from "@mui/icons-material/ArrowOutwardOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import OnePortfolio from "./OnePortfolio";
+import { useTranslation } from "react-i18next";
 
 const Portfolio = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -58,6 +59,7 @@ const Portfolio = () => {
   //     setLiked(false);
   //   }
   // };
+  const { t, i18n } = useTranslation();
 
   const handleClick = () => {
     setPortfolioData({
@@ -68,7 +70,7 @@ const Portfolio = () => {
     });
     setOpen(true);
   };
-
+  const isArabic = i18n.language === "ar";
   return (
     <>
       {" "}
@@ -79,11 +81,14 @@ const Portfolio = () => {
             color: "#ff014f",
             letterSpacing: "3px",
             fontFamily: "sans-serif",
-            fontSize: "clamp(12px, 2vw, 16px)",
+            fontSize: isArabic
+              ? "clamp(24px, 4vw, 32px)"
+              : "clamp(14px, 2.5vw, 18px)",
+
             textAlign: "center",
           }}
         >
-          VISIT MY PORTFOLIO AND LEAVE YOUR FEEDBACK
+          {t("portfolio.sectionSubtitle")}
         </div>
         <div
           style={{
@@ -93,7 +98,7 @@ const Portfolio = () => {
             margin: "16px 0",
           }}
         >
-          My Portfolio
+          {t("portfolio.sectionTitle")}
         </div>
         <Row
           style={{
@@ -142,19 +147,26 @@ const Portfolio = () => {
                   marginTop: "16px",
                 }}
               >
-                <h4
-                  style={{
-                    fontSize: "clamp(14px, 2vw, 18px)",
-                    fontWeight: 400,
-                    lineHeight: "1.25",
-                    textTransform: "uppercase",
-                    color: "#ff014f",
-                    margin: 0,
-                  }}
+                <Col
+                  span={24}
+                  style={{ textAlign: isArabic ? "right" : "left" }}
                 >
-                  Web App Development
-                </h4>
+                  <h4
+                    style={{
+                      fontSize: "clamp(14px, 2vw, 18px)",
+                      fontWeight: 400,
+                      lineHeight: "1.25",
+                      textTransform: "uppercase",
+                      color: "#ff014f",
+                      margin: 0,
+                    }}
+                    dir={isArabic ? "rtl" : "ltr"}
+                  >
+                    {t("portfolio.card.category")}
+                  </h4>
+                </Col>
               </Row>
+
               <div style={{ marginTop: "16px" }}>
                 <Row style={{ display: "flex", alignItems: "center" }}>
                   <h2
@@ -166,6 +178,7 @@ const Portfolio = () => {
                       margin: 0,
                       lineHeight: 1.4,
                       textWrap: "pretty",
+                      textAlign: isArabic ? "right" : "left",
                     }}
                     onMouseEnter={() => {
                       setIsHoveredText(true), setIndex1(1);
@@ -174,9 +187,8 @@ const Portfolio = () => {
                       setIsHoveredText(false), setIndex1(null);
                     }}
                   >
-                    A full-featured Learning Management System built with MERN
-                    stack, enabling user authentication, course management, and
-                    progress tracking
+                    {t("portfolio.card.description")}
+
                     <ArrowOutwardOutlinedIcon
                       style={{
                         visibility:

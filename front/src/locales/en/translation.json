@@ -1,0 +1,94 @@
+{
+  "home": {
+    "welcome": "WELCOME TO MY PORTFOLIO",
+    "hi": "Hi, I'm ",
+    "name": "Houssem Rezgui",
+    "a": "a ",
+    "webDeveloper": "Web Developer.",
+    "fullStackDeveloper": "Full-Stack Developer.",
+    "description1": "Full-stack React.js web developer specializing in building responsive frontends with React and scalable backends using Node.js, Express, and MongoDB.",
+    "description2": "Experienced in RESTful APIs, authentication, and modern UI development.",
+    "findMe": "WHERE TO FIND ME",
+    "skills": "BEST SKILLED ON",
+    "skill1": "ReactJS",
+    "skill2": "JavaScript",
+    "skill3": "NodeJs",
+    "skill4": "CSS",
+    "skill5": "HTML5"
+  },  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "portfolio": "Portfolio",
+    "resume": "Resume",
+    "contact": "Contact"
+  },
+  "feature":
+  {
+    "sectionTitle": "Features",
+    "title": "What I Do",
+    "cards": [
+      {
+        "title": "Web App Development",
+        "description": "I build modern, responsive web applications using React for the frontend, and manage data through RESTful APIs connected to MongoDB or MySQL. I focus on clean UI, smooth user experience, and efficient full-stack integration."
+      },
+      {
+        "title": "Mobile App Development",
+        "description": "I develop cross-platform mobile apps with React Native, focusing on smooth performance and native-like UI. I use Firebase for real-time data, authentication, and backend services to ensure fast and scalable app functionality."
+      },
+      {
+        "title": "DevOps/Security",
+        "description": "I implement basic DevOps practices for deploying and maintaining web apps, using tools like Git, GitHub Actions, and Vercel. I follow security best practices for authentication, data validation, and securing APIs."
+      },
+      {
+        "title": "API Design",
+        "description": "I design and build RESTful APIs that are clean, scalable, and easy to integrate. I focus on structured data flow, secure endpoints, and clear documentation to support seamless frontend-backend communication."
+      }
+    ]
+  },
+  "portfolio": {
+  "sectionSubtitle": "VISIT MY PORTFOLIO AND LEAVE YOUR FEEDBACK",
+  "sectionTitle": "My Portfolio",
+  "card": {
+    "category": "Web App Development",
+    "description": "A full-featured Learning Management System built with MERN stack, enabling user authentication, course management, and progress tracking"
+  }
+},
+"oneportfolio": {
+  "projectDemo": "Project Demo",
+  "fullStackRole": "Full Stack Role",
+  "projectTitle": "Learning Management System — LMS.",
+  "projectDescription": "This project is a full-stack web application built with React for the frontend, Node.js and Express for the backend, and Sequelize for managing the database. The frontend uses Material-UI (MUI) for a modern, responsive UI. The app allows users to interact with a database through RESTful APIs, with Sequelize handling data models and database queries. Users can sign up, log in, and manage data, with the backend providing authentication via JWT. The frontend dynamically updates based on user actions and data fetched from the server, ensuring a seamless experience. The application is designed to be scalable, with efficient error handling and clean UI components.",
+  "viewRepository": "View Repository",
+  "viewDemo": "VIEW DEMO",
+  "demoUnavailable": "Live demo is no longer available. :("
+},
+"resume": {
+  "sectionSubtitle": "VIEW MY RESUME AND FEEL FREE TO REACH OUT",
+  "sectionTitle": "My Resume"
+},
+"contact": {
+  "sectionSubtitle": "HAVE QUESTIONS OR OPPORTUNITIES? I’D LOVE TO HEAR FROM YOU",
+  "sectionTitle": "CONTACT ME",
+  "emailSectionTitle": "E-Mail Me",
+  "form": {
+    "nameLabel": "Your Name",
+    "emailLabel": "Your Email",
+    "messageLabel": "Message",
+    "sendButton": "Send Message",
+    "thankYou": "Thanks, I'll be in touch!",
+    "sentAlert": "Your message has been sent!"
+  }
+},
+"feedback": {
+  "title": "Leave Feedback",
+  "placeholder": "Tell me what you think…",
+  "submitButton": "Submit Feedback",
+  "thankYou": "Thanks for your feedback!",
+  "receivedAlert": "Feedback received!"
+}
+
+
+
+
+
+}

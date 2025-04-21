@@ -1,0 +1,89 @@
+{
+  "home": {
+    "welcome": "WILLKOMMEN IN MEINEM PORTFOLIO",
+    "hi": "Hallo, ich bin ",
+    "name": "Houssem Rezgui",
+    "a": "ein ",
+    "webDeveloper": "Webentwickler.",
+    "fullStackDeveloper": "Full-Stack-Entwickler.",
+    "description1": "Full-Stack-React.js-Webentwickler, der sich auf den Aufbau von responsiven Frontends mit React und skalierbaren Backends mit Node.js, Express und MongoDB spezialisiert.",
+    "description2": "Erfahren in RESTful APIs, Authentifizierung und moderner UI-Entwicklung.",
+    "findMe": "WO MAN MICH FINDEN KANN",
+    "skills": "BESTE FÄHIGKEITEN IN",
+    "skill1": "ReactJS",
+    "skill2": "JavaScript",
+    "skill3": "NodeJs",
+    "skill4": "CSS",
+    "skill5": "HTML5"
+  },
+  "nav": {
+    "home": "Startseite",
+    "features": "Funktionen",
+    "portfolio": "Portfolio",
+    "resume": "Lebenslauf",
+    "contact": "Kontakt"
+  },
+  "feature": {
+    "sectionTitle": "Funktionen",
+    "title": "Was Ich Mache",
+    "cards": [
+      {
+        "title": "Web-App-Entwicklung",
+        "description": "Ich baue moderne, responsive Webanwendungen mit React für das Frontend und verwalte Daten über RESTful APIs, die mit MongoDB oder MySQL verbunden sind. Ich lege Wert auf saubere UI, reibungslose Benutzererfahrung und effiziente Full-Stack-Integration."
+      },
+      {
+        "title": "Mobile App-Entwicklung",
+        "description": "Ich entwickle plattformübergreifende mobile Apps mit React Native, mit Fokus auf reibungslose Leistung und nativen UI. Ich benutze Firebase für Echtzeitdaten, Authentifizierung und Backend-Dienste, um eine schnelle und skalierbare App-Funktionalität zu gewährleisten."
+      },
+      {
+        "title": "DevOps/Sicherheit",
+        "description": "Ich implementiere grundlegende DevOps-Praktiken für das Bereitstellen und Warten von Web-Apps, unter Verwendung von Tools wie Git, GitHub Actions und Vercel. Ich folge bewährten Sicherheitspraktiken für Authentifizierung, Datenvalidierung und Sicherung von APIs."
+      },
+      {
+        "title": "API-Design",
+        "description": "Ich entwerfe und baue RESTful APIs, die sauber, skalierbar und einfach zu integrieren sind. Ich konzentriere mich auf strukturierten Datenfluss, sichere Endpunkte und klare Dokumentation, um eine nahtlose Kommunikation zwischen Frontend und Backend zu unterstützen."
+      }
+    ]
+  },
+  "portfolio": {
+    "sectionSubtitle": "BESUCHEN SIE MEIN PORTFOLIO UND HINTERLASSEN SIE IHR FEEDBACK",
+    "sectionTitle": "Mein Portfolio",
+    "card": {
+      "category": "Web-App-Entwicklung",
+      "description": "Ein voll ausgestattetes Learning Management System, das mit dem MERN-Stack entwickelt wurde und Benutzer-Authentifizierung, Kursverwaltung und Fortschrittsverfolgung ermöglicht."
+    }
+  },
+  "oneportfolio": {
+    "projectDemo": "Projekt-Demo",
+    "fullStackRole": "Full-Stack-Rolle",
+    "projectTitle": "Learning Management System — LMS.",
+    "projectDescription": "Dieses Projekt ist eine Full-Stack-Webanwendung, die mit React für das Frontend, Node.js und Express für das Backend und Sequelize zur Verwaltung der Datenbank entwickelt wurde. Das Frontend verwendet Material-UI (MUI) für eine moderne, responsive UI. Die App ermöglicht es Benutzern, mit einer Datenbank über RESTful APIs zu interagieren, wobei Sequelize die Datenmodelle und Datenbankabfragen verwaltet. Benutzer können sich anmelden, einloggen und Daten verwalten, wobei das Backend die Authentifizierung über JWT bereitstellt. Das Frontend wird basierend auf Benutzeraktionen und vom Server abgerufenen Daten dynamisch aktualisiert, um ein nahtloses Erlebnis zu gewährleisten. Die Anwendung wurde so entwickelt, dass sie skalierbar ist, mit effizientem Fehlerhandling und sauberen UI-Komponenten.",
+    "viewRepository": "Repository anzeigen",
+    "viewDemo": "DEMO ANSEHEN",
+    "demoUnavailable": "Die Live-Demo ist nicht mehr verfügbar. :("
+  },
+  "resume": {
+    "sectionSubtitle": "SEHEN SIE SICH MEINEN LEBENSLAUF AN UND ZÖGERN SIE NICHT, SICH ZU MELDEN",
+    "sectionTitle": "Mein Lebenslauf"
+  },
+  "contact": {
+    "sectionSubtitle": "HABEN SIE FRAGEN ODER MÖGLICHKEITEN? ICH FREUE MICH, VON IHNEN ZU HÖREN",
+    "sectionTitle": "KONTAKTIEREN SIE MICH",
+    "emailSectionTitle": "E-Mail an mich",
+    "form": {
+      "nameLabel": "Ihr Name",
+      "emailLabel": "Ihre E-Mail",
+      "messageLabel": "Nachricht",
+      "sendButton": "Nachricht senden",
+      "thankYou": "Danke, ich werde mich bei Ihnen melden!",
+      "sentAlert": "Ihre Nachricht wurde gesendet!"
+    }
+  },
+  "feedback": {
+    "title": "Hinterlassen Sie Feedback",
+    "placeholder": "Erzählen Sie mir, was Sie denken...",
+    "submitButton": "Feedback absenden",
+    "thankYou": "Danke für Ihr Feedback!",
+    "receivedAlert": "Feedback erhalten!"
+  }
+}

@@ -11,6 +11,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Snowfall } from "react-snowfall";
 import banner from "../assets/0-Photoroom.png";
+import { useTranslation } from "react-i18next";
 
 function IconReact(props) {
   return (
@@ -76,14 +77,16 @@ function IconCss3(props) {
 }
 
 const Home = ({ isMobile }) => {
-  console.log(isMobile);
+  // console.log(isMobile);
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === "ar";
+  // console.log(isArabic);
 
   return (
     <div style={{ padding: !isMobile ? "5%" : "0", position: "relative" }}>
       <Snowfall speed={[0, 0.5]} snowflakeCount={30} style={{ opacity: 0.5 }} />
 
       <Row gutter={[24, 24]} align="middle">
-        {/* Text Content Column */}
         <Col xs={24} lg={14} xl={12}>
           <div style={{ marginBottom: "40px" }}>
             <Typography.Title
@@ -94,9 +97,10 @@ const Home = ({ isMobile }) => {
                 letterSpacing: "3px",
                 color: "#c4cfde",
                 textTransform: "uppercase",
+                textAlign: isArabic ? "right" : "left",
               }}
             >
-              WELCOME TO MY PORTFOLIO
+              {t("home.welcome")}
             </Typography.Title>
 
             <Typography.Text
@@ -106,17 +110,20 @@ const Home = ({ isMobile }) => {
                 lineHeight: 1.2,
                 color: "#ffffff",
                 display: "block",
+                textAlign: isArabic ? "right" : "left",
               }}
             >
-              {"Hi, I'm "}
+              {t("home.hi")}
+
               <Typography.Text
                 style={{
                   color: "#ff014f",
                   display: "inline-block",
                   fontSize: "70%",
+                  textAlign: isArabic ? "right" : "left",
                 }}
               >
-                Houssem Rezgui
+                {t("home.name")}
               </Typography.Text>
             </Typography.Text>
 
@@ -128,11 +135,18 @@ const Home = ({ isMobile }) => {
                 color: "#ffffff",
                 display: "block",
                 lineHeight: 1.3,
+                textAlign: isArabic ? "right" : "left",
               }}
             >
-              a{" "}
+              {t("home.a")}
+
               <TypeAnimation
-                sequence={["Web Developer.", 500, "Full-Stack Developer.", 500]}
+                sequence={[
+                  t("home.webDeveloper"),
+                  500,
+                  t("home.fullStackDeveloper"),
+                  500,
+                ]}
                 speed={25}
                 repeat={Infinity}
               />
@@ -145,15 +159,17 @@ const Home = ({ isMobile }) => {
                 lineHeight: 1.6,
                 marginBottom: "40px",
                 display: "block",
+                textAlign: isArabic ? "right" : "left",
               }}
+              dir={isArabic ? "rtl" : "ltr"}
             >
-              Full-stack React.js web developer specializing in building
-              responsive frontends with React and scalable backends using
-              Node.js, Express, and MongoDB. Experienced in RESTful APIs,
-              authentication, and modern UI development.
+              <>
+                {t("home.description1")}
+                <br />
+                {t("home.description2")}
+              </>
             </Typography.Text>
 
-            {/* Social & Skills Section */}
             <Row gutter={[24, 24]}>
               <Col xs={24} md={12}>
                 <Typography.Title
@@ -165,7 +181,7 @@ const Home = ({ isMobile }) => {
                     textTransform: "uppercase",
                   }}
                 >
-                  WHERE TO FIND ME
+                  {t("home.findMe")}
                 </Typography.Title>
                 <Row gutter={[16, 16]}>
                   {[GithubFilled, LinkedinFilled].map((Icon, index) => {
@@ -222,7 +238,7 @@ const Home = ({ isMobile }) => {
                     textTransform: "uppercase",
                   }}
                 >
-                  BEST SKILLED ON
+                  {t("home.skills")}
                 </Typography.Title>
                 <Row gutter={[16, 16]}>
                   {[
@@ -249,14 +265,14 @@ const Home = ({ isMobile }) => {
                         }}
                         title={
                           index === 0
-                            ? "ReactJS"
+                            ? t("home.skill1")
                             : index === 1
-                            ? "JavaScript"
+                            ? t("home.skill2")
                             : index === 2
-                            ? "NodeJs"
+                            ? t("home.skill3")
                             : index === 3
-                            ? "CSS"
-                            : "HTML5"
+                            ? t("home.skill4")
+                            : t("home.skill5")
                         }
                       >
                         <Icon
@@ -283,7 +299,6 @@ const Home = ({ isMobile }) => {
           </div>
         </Col>
 
-        {/* Image Column */}
         <Col xs={24} lg={10} xl={12}>
           <div
             style={{

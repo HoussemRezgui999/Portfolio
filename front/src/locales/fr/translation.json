@@ -1,0 +1,98 @@
+{
+  "home": {
+    "welcome": "BIENVENUE SUR MON PORTFOLIO",
+    "hi": "Salut, je suis ",
+    "name": "Houssem Rezgui",
+    "a": "un ",
+    "webDeveloper": "Développeur Web.",
+    "fullStackDeveloper": "Développeur Full-Stack.",
+    "description1": "Développeur web Full-Stack React.js spécialisé dans la création d'interfaces réactives avec React et de backends évolutifs utilisant Node.js, Express et MongoDB.",
+    "description2": "Expérimenté dans les API RESTful, l'authentification et le développement d'interfaces utilisateur modernes.",
+    "findMe": "OÙ ME TROUVER",
+    "skills": "COMPÉTENCES PRINCIPALES",
+    "skill1": "ReactJS",
+    "skill2": "JavaScript",
+    "skill3": "NodeJs",
+    "skill4": "CSS",
+    "skill5": "HTML5"
+  },
+  
+    "nav": {
+      "home": "Accueil",
+      "features": "Fonctionnalités",
+      "portfolio": "Portfolio",
+      "resume": "CV",
+      "contact": "Contact"
+    },
+    "feature": {
+  "sectionTitle": "Fonctionnalités",
+  "title": "Ce que je fais",
+  "cards": [
+    {
+      "title": "Développement d'applications web",
+      "description": "Je crée des applications web modernes et réactives en utilisant React pour le frontend, et je gère les données via des API RESTful connectées à MongoDB ou MySQL. Je me concentre sur une interface propre, une expérience utilisateur fluide et une intégration full-stack efficace."
+    },
+    {
+      "title": "Développement d'applications mobiles",
+      "description": "Je développe des applications mobiles multiplateformes avec React Native, en mettant l'accent sur des performances fluides et une interface utilisateur proche du natif. J'utilise Firebase pour les données en temps réel, l'authentification et les services backend afin d'assurer une fonctionnalité rapide et évolutive."
+    },
+    {
+      "title": "DevOps / Sécurité",
+      "description": "Je mets en œuvre des pratiques DevOps de base pour le déploiement et la maintenance des applications web, en utilisant des outils comme Git, GitHub Actions et Vercel. Je respecte les bonnes pratiques de sécurité pour l'authentification, la validation des données et la sécurisation des API."
+    },
+    {
+      "title": "Conception d'API",
+      "description": "Je conçois et construis des API RESTful claires, évolutives et faciles à intégrer. Je mets l'accent sur un flux de données structuré, des points d'accès sécurisés et une documentation claire pour faciliter la communication entre le frontend et le backend."
+    }
+  ]
+},
+"portfolio": {
+  "sectionSubtitle": "VISITEZ MON PORTFOLIO ET LAISSEZ VOTRE AVIS",
+  "sectionTitle": "Mon Portfolio",
+  "card": {
+    "category": "Développement d'applications web",
+    "description": "Un système de gestion de l’apprentissage complet basé sur la stack MERN, permettant l’authentification des utilisateurs, la gestion des cours et le suivi de la progression"
+  }
+  
+
+},
+"oneportfolio": {
+  "projectDemo": "Démo du projet",
+  "fullStackRole": "Rôle Full Stack",
+  "projectTitle": "Système de Gestion de l'Apprentissage — LMS.",
+  "projectDescription": "Ce projet est une application web full-stack construite avec React pour le frontend, Node.js et Express pour le backend, et Sequelize pour la gestion de la base de données. Le frontend utilise Material‑UI (MUI) pour une interface moderne et réactive. L'application permet aux utilisateurs d'interagir avec une base de données via des API RESTful, Sequelize gérant les modèles de données et les requêtes. Les utilisateurs peuvent s'inscrire, se connecter et gérer leurs données, avec une authentification assurée par JWT. Le frontend se met à jour dynamiquement en fonction des actions des utilisateurs et des données récupérées depuis le serveur, garantissant une expérience fluide. L'application est conçue pour être évolutive, avec une gestion efficace des erreurs et des composants d'interface soignés.",
+  "viewRepository": "Voir le dépôt",
+  "viewDemo": "VOIR LA DÉMO",
+  "demoUnavailable": "La démonstration en direct n'est plus disponible. :("
+},
+"resume": {
+  "sectionSubtitle": "CONSULTEZ MON CV ET N’HÉSITEZ PAS À ME CONTACTER",
+  "sectionTitle": "Mon CV"
+},
+"contact": {
+  "sectionSubtitle": "VOUS AVEZ DES QUESTIONS OU DES OPPORTUNITÉS ? JE SUIS À VOTRE ÉCOUTE",
+  "sectionTitle": "CONTACTEZ‑MOI",
+  "emailSectionTitle": "ENVOYEZ‑MOI UN E‑MAIL",
+  "form": {
+    "nameLabel": "Votre nom",
+    "emailLabel": "Votre e‑mail",
+    "messageLabel": "Message",
+    "sendButton": "Envoyer le message",
+    "thankYou": "Merci, je vous répondrai bientôt !",
+    "sentAlert": "Votre message a été envoyé !"
+  }
+},
+"feedback": {
+  "title": "Laisser un avis",
+  "placeholder": "Dites-moi ce que vous en pensez…",
+  "submitButton": "Envoyer l'avis",
+  "thankYou": "Merci pour votre avis !",
+  "receivedAlert": "Avis reçu !"
+}
+
+
+
+
+  
+  
+}

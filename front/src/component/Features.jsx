@@ -7,6 +7,7 @@ import { Col, Grid, Row, Typography } from "antd";
 import React, { useState } from "react";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import { Divider } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const { useBreakpoint } = Grid;
 
@@ -20,7 +21,9 @@ const FeatureCard = ({
 }) => {
   const isActive = activeIndex === index;
   const screens = useBreakpoint();
-  console.log(title);
+  // console.log(title);
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === "ar";
 
   return (
     <Col
@@ -48,12 +51,19 @@ const FeatureCard = ({
       >
         <div style={{ textAlign: "left" }}>
           <div style={{ marginBottom: 24 }}>
-            {React.cloneElement(icon, {
-              style: {
-                fontSize: screens.xs ? "40px" : "50px",
-                color: "#ff014f",
-              },
-            })}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: isArabic ? "flex-end" : "flex-start",
+              }}
+            >
+              {React.cloneElement(icon, {
+                style: {
+                  fontSize: screens.xs ? "40px" : "50px",
+                  color: "#ff014f",
+                },
+              })}
+            </div>
           </div>
           <Typography.Title
             level={3}
@@ -61,6 +71,7 @@ const FeatureCard = ({
               fontWeight: 300,
               color: "#c4cfde",
               marginBottom: 16,
+              textAlign: isArabic ? "right" : "left",
             }}
           >
             {title}
@@ -70,6 +81,7 @@ const FeatureCard = ({
               color: "#878e99",
               marginBottom: 40,
               minHeight: screens.md ? null : "auto",
+              textAlign: isArabic ? "right" : "left",
             }}
           >
             {description}
@@ -91,31 +103,29 @@ const FeatureCard = ({
 const Features = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const screens = useBreakpoint();
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === "ar";
 
   const features = [
     {
       icon: <LanguageOutlinedIcon />,
-      title: "Web App Development",
-      description:
-        "I build modern, responsive web applications using React for the frontend, and manage data through RESTful APIs connected to MongoDB or MySQL. I focus on clean UI, smooth user experience, and efficient full-stack integration.",
+      title: t("feature.cards.0.title"),
+      description: t("feature.cards.0.description"),
     },
     {
       icon: <MobileOutlined />,
-      title: "Mobile App Development",
-      description:
-        "I develop cross-platform mobile apps with React Native, focusing on smooth performance and native-like UI. I use Firebase for real-time data, authentication, and backend services to ensure fast and scalable app functionality.",
+      title: t("feature.cards.1.title"),
+      description: t("feature.cards.1.description"),
     },
     {
       icon: <SettingOutlined />,
-      title: "DevOps/Security",
-      description:
-        "I implement basic DevOps practices for deploying and maintaining web apps, using tools like Git, GitHub Actions, and Vercel. I follow security best practices for authentication, data validation, and securing APIs.",
+      title: t("feature.cards.2.title"),
+      description: t("feature.cards.2.description"),
     },
     {
       icon: <LanguageOutlinedIcon />,
-      title: "API Design",
-      description:
-        "I design and build RESTful APIs that are clean, scalable, and easy to integrate. I focus on structured data flow, secure endpoints, and clear documentation to support seamless frontend-backend communication.",
+      title: t("feature.cards.3.title"),
+      description: t("feature.cards.3.description"),
     },
   ];
 
@@ -127,7 +137,11 @@ const Features = () => {
       >
         <Typography.Text
           style={{
-            fontSize: screens.xs ? "12px" : "14px",
+            // fontSize: screens.xs ? "12px" : "14px",
+            fontSize: isArabic
+              ? "clamp(24px, 4vw, 32px)"
+              : "clamp(14px, 2.5vw, 18px)",
+
             letterSpacing: "3px",
             color: "#ff014f",
             textTransform: "uppercase",
@@ -135,7 +149,7 @@ const Features = () => {
             marginBottom: 16,
           }}
         >
-          Features
+          {t("feature.sectionTitle")}
         </Typography.Text>
         <Typography.Title
           style={{
@@ -144,7 +158,7 @@ const Features = () => {
             marginBottom: screens.xs ? "24px" : "48px",
           }}
         >
-          What I Do
+          {t("feature.title")}
         </Typography.Title>
         <Row
           gutter={[screens.xs ? 16 : 32, screens.xs ? 16 : 32]}
