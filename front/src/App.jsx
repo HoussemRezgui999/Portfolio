@@ -29,7 +29,7 @@ const App = () => {
             display: "flex",
             flexWrap: "wrap",
             alignItems: "center",
-            justifyContent: "space-between",
+            justifyContent: isMobile ? "center" : "space-between",
             position: "fixed",
             width: "100%",
             zIndex: 9999,
@@ -42,16 +42,18 @@ const App = () => {
             // gap: isMobile ? "0" : "75%",
           }}
         >
-          <Avatar
-            size={isMobile ? 60 : 60}
-            src={img}
-            style={{ cursor: "pointer" }}
-            onClick={() => {
-              window.location.hash = "#part-1";
+          {!isMobile && (
+            <Avatar
+              size={isMobile ? 60 : 60}
+              src={img}
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                window.location.hash = "#part-1";
 
-              window.location.reload();
-            }}
-          />
+                window.location.reload();
+              }}
+            />
+          )}
 
           <Anchor
             direction="horizontal"
