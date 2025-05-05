@@ -162,6 +162,7 @@ const Features = () => {
         </Typography.Title>
         <Row
           gutter={[screens.xs ? 16 : 32, screens.xs ? 16 : 32]}
+          style={{ gap: screens.xs ? "5rem" : null }}
           justify="center"
         >
           {features.map((feature, index) => (

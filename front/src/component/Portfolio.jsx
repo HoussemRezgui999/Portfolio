@@ -71,10 +71,12 @@ const Portfolio = () => {
     setOpen(true);
   };
   const isArabic = i18n.language === "ar";
+  const { useBreakpoint } = Grid;
+  const screens = useBreakpoint();
+  const isMobile = screens.xs;
   return (
-    <>
+    <div style={{ padding: isMobile ? "24px 16px" : "5% 7%" }}>
       {" "}
-      <Divider style={{ background: "black" }} variant="middle" />
       <Col style={{ gap: 5, padding: "0 16px", marginTop: "2%" }}>
         <div
           style={{
@@ -221,7 +223,7 @@ const Portfolio = () => {
       >
         <OnePortfolio img={img} />
       </Dialog>
-    </>
+    </div>
   );
 };
 

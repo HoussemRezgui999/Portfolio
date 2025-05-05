@@ -6,7 +6,6 @@ import {
   IconButton,
 } from "@mui/material";
 import { Col, Row, Typography } from "antd";
-import { Grid } from "@mui/material";
 
 import {
   ArrowRightOutlined,
@@ -21,18 +20,27 @@ import React, { useState, useEffect } from "react";
 import ArrowOutwardOutlinedIcon from "@mui/icons-material/ArrowOutwardOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import { useTranslation } from "react-i18next";
+import { Grid } from "antd";
 
 export default function ResumePage() {
+  const { useBreakpoint } = Grid;
+
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === "ar";
   const isFrench = i18n.language === "fr";
   const isDeutsch = i18n.language === "de";
-
+  const screens = useBreakpoint();
+  const isMobile = screens.xs;
   return (
-    <>
+    <div style={{ padding: screens.xs ? "24px 16px" : "5% 7%" }}>
       {" "}
-      <Divider style={{ background: "black" }} variant="middle" />
-      <Col style={{ gap: 5 }}>
+      {/* <Divider style={{ background: "black" }} variant="middle" /> */}
+      <Col
+        style={{
+          gap: 5,
+          paddingTop: isMobile ? "null" : "5%",
+        }}
+      >
         <div
           style={{
             color: "#ff014f",
@@ -78,6 +86,6 @@ export default function ResumePage() {
           </div>
         </div>
       </Col>
-    </>
+    </div>
   );
 }

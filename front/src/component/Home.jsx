@@ -83,7 +83,12 @@ const Home = ({ isMobile }) => {
   // console.log(isArabic);
 
   return (
-    <div style={{ padding: !isMobile ? "5%" : "0", position: "relative" }}>
+    <div
+      style={{
+        padding: !isMobile ? "5%" : "5%",
+        position: "relative",
+      }}
+    >
       <Snowfall speed={[0, 0.5]} snowflakeCount={30} style={{ opacity: 0.5 }} />
 
       <Row gutter={[24, 24]} align="middle">

@@ -16,6 +16,7 @@ const App = () => {
   const { Link } = Anchor;
   const screens = useBreakpoint();
   const isMobile = screens.xs;
+
   const { t, i18n } = useTranslation();
   const isDeutsch = i18n.language === "de";
 
@@ -35,8 +36,8 @@ const App = () => {
 
   const navStyle = {
     color: "#f4f5f6",
-    fontSize: isDeutsch && isMobile ? "13px" : "16px",
-    fontWeight: isDeutsch && isMobile ? 290 : 300,
+    fontSize: isMobile ? "12px" : "16px",
+    fontWeight: isMobile ? 250 : 300,
   };
 
   return (
@@ -144,7 +145,7 @@ const App = () => {
             <Select
               value={i18n.language}
               size={isMobile ? "small" : undefined}
-              style={{ zIndex: 999, display: "flex" }}
+              style={{ zIndex: 999, display: "flex", marginLeft: 2 }}
               onChange={changeLanguage}
               dropdownStyle={{ zIndex: 10000 }}
               options={[
@@ -194,14 +195,15 @@ const App = () => {
 const Section = ({ children, id }) => {
   const screens = useBreakpoint();
   const isMobile = screens.xs;
+  const isMed = screens.md;
 
   return (
     <div
       id={id}
       style={{
-        width: "auto",
+        width: "100%",
         minHeight: "100vh",
-        padding: isMobile ? "15%" : "30px",
+        paddingTop: isMobile ? "15%" : "0%",
         background: "#212428",
         display: "flex",
         justifyContent: "center",
