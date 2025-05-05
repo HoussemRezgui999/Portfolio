@@ -13,7 +13,7 @@ import {
   MobileOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
-import resumePDF from "../assets/resume2.pdf";
+import resumePDF from "../assets/Houssem-Rezgui-FlowCV-Resume-20250422.pdf";
 import { Document } from "react-pdf";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import React, { useState, useEffect } from "react";
@@ -24,13 +24,13 @@ import { Grid } from "antd";
 
 export default function ResumePage() {
   const { useBreakpoint } = Grid;
-
+  const screens = useBreakpoint();
+  const isMobile = screens.xs;
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === "ar";
   const isFrench = i18n.language === "fr";
   const isDeutsch = i18n.language === "de";
-  const screens = useBreakpoint();
-  const isMobile = screens.xs;
+
   return (
     <div style={{ padding: screens.xs ? "24px 16px" : "5% 7%" }}>
       {" "}
