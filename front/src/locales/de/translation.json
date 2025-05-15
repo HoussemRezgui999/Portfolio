@@ -50,13 +50,19 @@
     "sectionTitle": "Mein Portfolio",
     "card": {
       "category": "Web-App-Entwicklung",
-      "description": "Ein voll ausgestattetes Learning Management System, das mit dem MERN-Stack entwickelt wurde und Benutzer-Authentifizierung, Kursverwaltung und Fortschrittsverfolgung ermöglicht."
+      "description": "Ein voll ausgestattetes Learning Management System, das mit dem MERN-Stack entwickelt wurde und Benutzer-Authentifizierung, Kursverwaltung und Fortschrittsverfolgung ermöglicht.",
+      "description2": "Teilweise fertiggestellte E-Commerce-Frontend-Anwendung."
     }
   },
   "oneportfolio": {
     "projectDemo": "Projekt-Demo",
     "fullStackRole": "Full-Stack-Rolle",
+    "fullStackRole2": "UI/UX-Rolle",
+
     "projectTitle": "Learning Management System — LMS.",
+
+    "projectDescription2": "Dies ist eine reine Frontend-E-Commerce-Anwendung, die mit React.js entwickelt und mit Chakra UI gestaltet wurde. Sie ruft Produktdaten von der öffentlichen Fake Store API ab, um ein einfaches Online-Shopping-Erlebnis zu simulieren. Die Anwendung verfügt über ein responsives Design, eine Produktübersicht und einzelne Produktdetailseiten, die alle durch clientseitiges Routing verwaltet werden. Sie dient als einfache, aber effektive Demonstration für den Aufbau moderner Benutzeroberflächen mit React und realitätsnahen Beispieldaten und eignet sich ideal zum Lernen oder für ein Portfolio.",
+
     "projectDescription": "Dieses Projekt ist eine Full-Stack-Webanwendung, die mit React für das Frontend, Node.js und Express für das Backend und Sequelize zur Verwaltung der Datenbank entwickelt wurde. Das Frontend verwendet Material-UI (MUI) für eine moderne, responsive UI. Die App ermöglicht es Benutzern, mit einer Datenbank über RESTful APIs zu interagieren, wobei Sequelize die Datenmodelle und Datenbankabfragen verwaltet. Benutzer können sich anmelden, einloggen und Daten verwalten, wobei das Backend die Authentifizierung über JWT bereitstellt. Das Frontend wird basierend auf Benutzeraktionen und vom Server abgerufenen Daten dynamisch aktualisiert, um ein nahtloses Erlebnis zu gewährleisten. Die Anwendung wurde so entwickelt, dass sie skalierbar ist, mit effizientem Fehlerhandling und sauberen UI-Komponenten.",
     "viewRepository": "Repository anzeigen",
     "viewDemo": "DEMO ANSEHEN",
